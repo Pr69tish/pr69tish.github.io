@@ -14,7 +14,7 @@
   <title>Preetish Kad — Cybersecurity &amp; Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@1,600;1,700;1,800&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,25 +24,28 @@
 
     /* ── TOKENS ── */
     :root {
-      --gold:        #B8841F;
-      --gold-light:  #D4A84B;
-      --gold-bright: #E8C060;
-      --gold-dim:    #7A5A14;
-      --gold-pale:   rgba(184,132,31,0.07);
-      --gold-border: rgba(184,132,31,0.22);
+      --gold:        #4A6FA5;
+      --gold-light:  #6B8CBF;
+      --gold-bright: #8AAAD4;
+      --gold-dim:    #1E3A5F;
+      --gold-pale:   rgba(74,111,165,0.09);
+      --gold-border: rgba(74,111,165,0.35);
       --steel:       #8899AA;
       --steel-dim:   rgba(136,153,170,0.15);
       --night:       #060609;
       --night-2:     #0B0B10;
       --night-3:     #101018;
       --night-4:     #17171F;
-      --cream:       #EDE5D0;
-      --cream-soft:  #B8AD9A;
+      --cream:       #F0ECE4;
+      --cream-soft:  #C8C0B0;
       --cream-muted: #6B6458;
-      --serif:  'Playfair Display', Georgia, serif;
+      --serif:  'Libre Baskerville', Georgia, serif;
+      --name:   'Rajdhani', sans-serif;
+      --italic: 'Spectral', Georgia, serif;
       --body:   'Cormorant Garamond', Georgia, serif;
-      --sans:   'Barlow', sans-serif;
-      --cond:   'Barlow Condensed', sans-serif;
+      --sans:   'Rajdhani', sans-serif;
+      --cond:   'Share Tech Mono', 'Courier New', monospace;
+      --mono:   'Share Tech Mono', 'Courier New', monospace;
       --nav-h:  66px;
     }
 
@@ -138,8 +141,8 @@
     .hero-bg {
       position: absolute; inset: 0; z-index: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(198,151,47,0.06) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(198,151,47,0.03) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(74,111,165,0.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(74,111,165,0.03) 0%, transparent 60%);
     }
     .hero-texture {
       position: absolute; inset: 0; z-index: 0; opacity: .025; pointer-events: none;
@@ -164,13 +167,21 @@
       content: ''; display: block; width: 36px; height: 1px; background: var(--gold-dim); flex-shrink: 0;
     }
     h1 {
-      font-family: var(--serif);
-      font-size: clamp(3.6rem, 8.5vw, 7rem);
-      font-weight: 800; line-height: .93;
-      letter-spacing: .08em; color: var(--cream);
+      font-family: var(--name);
+      font-size: clamp(4.2rem, 9vw, 8.5rem);
+      font-weight: 700; line-height: .9;
+      letter-spacing: .12em; color: var(--cream);
+      text-transform: uppercase;
       animation: fadeUp .8s .1s ease both;
     }
-    h1 em { font-style: italic; color: var(--gold); display: block; }
+    h1 em {
+      font-style: normal; color: var(--gold);
+      display: block; letter-spacing: .14em;
+    }
+    .section-title em {
+      font-style: italic; color: var(--gold-light);
+      font-family: var(--italic); font-weight: 700;
+    }
     .hero-rule {
       width: 60px; height: 2px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
@@ -237,8 +248,9 @@
     }
     .section-title {
       font-family: var(--serif);
-      font-size: clamp(2.1rem, 4vw, 3rem);
-      font-weight: 800; line-height: 1.05; color: var(--cream);
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-weight: 700; line-height: 1.1; color: var(--cream);
+      letter-spacing: .02em;
     }
     .section-title em { font-style: italic; color: var(--gold-light); }
     .gold-rule {
@@ -354,7 +366,7 @@
       height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent);
       opacity: 0; transition: opacity .3s;
     }
-    .skill-group:hover { border-color: var(--gold); box-shadow: 0 0 36px rgba(198,151,47,.05); }
+    .skill-group:hover { border-color: var(--gold); box-shadow: 0 0 36px rgba(74,111,165,.05); }
     .skill-group:hover::after { opacity: 1; }
     .skill-group-title {
       font-family: var(--cond); font-size: .72rem; font-weight: 700;
@@ -365,11 +377,11 @@
     .pill {
       font-family: var(--sans); font-size: .72rem; font-weight: 500;
       letter-spacing: .04em; color: var(--cream-soft);
-      border: 1px solid rgba(184,132,31,0.18);
+      border: 1px solid rgba(74,111,165,0.18);
       background: var(--night-4); padding: .28rem .75rem;
       transition: color .2s, border-color .2s;
     }
-    .skill-group:hover .pill { border-color: rgba(198,151,47,0.38); color: var(--cream); }
+    .skill-group:hover .pill { border-color: rgba(74,111,165,0.38); color: var(--cream); }
 
     /* CERTS */
     .certs-section { margin-top: 5rem; text-align: center; }
@@ -408,7 +420,7 @@
       background: linear-gradient(to right, transparent, var(--gold), transparent);
       opacity: 0; transition: opacity .3s;
     }
-    .project-card:hover { border-color: var(--gold); box-shadow: 0 10px 50px rgba(198,151,47,.06); }
+    .project-card:hover { border-color: var(--gold); box-shadow: 0 10px 50px rgba(74,111,165,.06); }
     .project-card:hover::before { opacity: 1; }
     .project-num {
       font-family: var(--cond); font-size: .68rem; font-weight: 700;
@@ -500,10 +512,10 @@
     }
     .explore-card::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(198,151,47,0.07), transparent 70%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(74,111,165,0.07), transparent 70%);
       opacity: 0; transition: opacity .3s;
     }
-    .explore-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 36px rgba(198,151,47,.07); }
+    .explore-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 36px rgba(74,111,165,.07); }
     .explore-card:hover::before { opacity: 1; }
     .explore-icon {
       font-size: 1.4rem; margin-bottom: .85rem;
@@ -642,7 +654,7 @@
     .scroll-arrow { animation: bounce 2s ease-in-out infinite; }
 
     /* ── PILL HOVER ── */
-    .pill:hover { color: var(--cream); border-color: rgba(184,132,31,0.5); transform: translateY(-1px); }
+    .pill:hover { color: var(--cream); border-color: rgba(74,111,165,0.5); transform: translateY(-1px); }
     .pill { transition: color .2s, border-color .2s, transform .2s; }
 
     /* ── STAGGERED CARD REVEALS ── */
@@ -665,14 +677,14 @@
     #cursor-glow {
       position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none;
       width: 320px; height: 320px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(184,132,31,0.18) 0%, rgba(184,132,31,0.08) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(74,111,165,0.18) 0%, rgba(74,111,165,0.08) 40%, transparent 70%);
       transform: translate(-50%, -50%);
       transition: opacity .4s, width .6s ease, height .6s ease, background .4s;
       will-change: transform;
     }
     #cursor-glow.hidden { opacity: 0; }
     body.cursor-hover #cursor-glow {
-      background: radial-gradient(circle, rgba(184,132,31,0.26) 0%, rgba(184,132,31,0.12) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(74,111,165,0.26) 0%, rgba(74,111,165,0.12) 40%, transparent 70%);
       width: 420px; height: 420px;
     }
     * { cursor: none !important; }
@@ -702,7 +714,7 @@
     body.cursor-hover #cursor-ring {
       width: 36px; height: 36px;
       border-color: var(--gold);
-      background: rgba(184,132,31,0.05);
+      background: rgba(74,111,165,0.05);
     }
     /* Click state */
     body.cursor-click #cursor-dot {
@@ -715,13 +727,58 @@
     /* Text cursor state */
     body.cursor-text #cursor-ring {
       width: 3px; height: 28px; border-radius: 1px;
-      border-color: var(--gold); background: rgba(184,132,31,0.2);
+      border-color: var(--gold); background: rgba(74,111,165,0.2);
     }
     body.cursor-text #cursor-dot { opacity: 0; }
     /* Hide on mobile */
     @media (hover: none) {
       #cursor-dot, #cursor-ring { display: none; }
       * { cursor: auto !important; }
+    }
+
+    /* ── FORMAL REFINEMENTS ── */
+
+    /* Section eyebrow — tighter, more spaced */
+    .section-eyebrow {
+      font-family: var(--cond); font-size: .65rem; font-weight: 500;
+      letter-spacing: .45em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .5rem;
+    }
+
+    /* Gold rule — thinner and longer for gravitas */
+    .gold-rule::before, .gold-rule::after {
+      width: 56px; height: 1px;
+    }
+
+    /* Body text — tighter tracking, more formal */
+    .about-body, .project-desc, .contact-body, .exp-bullets {
+      font-size: 1.05rem; line-height: 1.9; letter-spacing: .01em;
+    }
+
+    /* Section titles — a shade smaller and more spaced */
+    .section-title { letter-spacing: .02em; }
+
+    /* Stat labels — sharper */
+    .stat-lbl { letter-spacing: .22em; }
+
+    /* Project number — Roman numeral feel */
+    .project-num { letter-spacing: .3em; font-size: .62rem; }
+
+    /* Experience date — right-aligned feel */
+    .exp-date { letter-spacing: .15em; }
+
+    /* Footer — centred rule above */
+    footer { border-top: 1px solid var(--gold-border); }
+
+    /* Nav logo — wider tracking */
+    .nav-logo { letter-spacing: .28em; }
+
+    /* Pill text — cleaner */
+    .pill { letter-spacing: .06em; font-size: .7rem; }
+    .term-prefix {
+      font-family: var(--mono); color: var(--gold-dim);
+      font-size: .62rem; letter-spacing: .04em;
+      margin-right: .2rem; opacity: .65;
     }
 
     /* ── TOAST ── */
@@ -924,7 +981,7 @@
         transition: color .2s, background .2s;
       }
       #mob-nav a .mob-icon { font-size: .95rem; line-height: 1; }
-      #mob-nav a.mob-active { color: var(--gold-bright); background: rgba(184,132,31,0.14); }
+      #mob-nav a.mob-active { color: var(--gold-bright); background: rgba(74,111,165,0.14); }
 
       /* Push footer up so nav pill never covers content */
       footer { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
@@ -1102,7 +1159,7 @@
       </div>
 
       <div class="reveal">
-        <div class="section-eyebrow">About</div>
+        <div class="section-eyebrow">— About —</div>
         <h2 class="section-title">Operator.<br><em>Analyst.</em><br>Visionary.</h2>
         <div class="gold-rule"><div class="gold-rule-diamond"></div></div>
         <p class="about-body">
@@ -1163,7 +1220,7 @@
   <!-- ── SKILLS ── -->
   <section id="skills" aria-label="Technical Skills">
     <div class="reveal" style="text-align:center">
-      <div class="section-eyebrow">Expertise</div>
+      <div class="section-eyebrow">— Expertise —</div>
       <h2 class="section-title">Technical <em>Proficiency</em></h2>
       <div class="gold-rule gold-rule-center"><div class="gold-rule-diamond"></div></div>
     </div>
@@ -1211,7 +1268,7 @@
     </div>
 
     <div class="certs-section reveal">
-      <div class="section-eyebrow">Credentials</div>
+      <div class="section-eyebrow">— Credentials —</div>
       <h3 class="section-title" style="font-size:1.6rem;">Certifications</h3>
       <div class="gold-rule gold-rule-center" style="margin-bottom:0"><div class="gold-rule-diamond"></div></div>
       <div class="cert-row">
@@ -1236,7 +1293,7 @@
   <!-- ── PROJECTS ── -->
   <section id="projects" aria-label="Projects">
     <div class="reveal" style="text-align:center">
-      <div class="section-eyebrow">Portfolio</div>
+      <div class="section-eyebrow">— Portfolio —</div>
       <h2 class="section-title">Projects I've <em>Built</em></h2>
       <div class="gold-rule gold-rule-center"><div class="gold-rule-diamond"></div></div>
     </div>
@@ -1276,7 +1333,7 @@
   <!-- ── EXPERIENCE ── -->
   <section id="experience" aria-label="Work Experience">
     <div class="reveal">
-      <div class="section-eyebrow">Career</div>
+      <div class="section-eyebrow">— Career —</div>
       <h2 class="section-title">Professional <em>Experience</em></h2>
       <div class="gold-rule"><div class="gold-rule-diamond"></div></div>
     </div>
@@ -1317,7 +1374,7 @@
   <!-- ── LEARNING & EXPLORING ── -->
   <section id="exploring" aria-label="Learning and Exploring">
     <div class="reveal" style="text-align:center">
-      <div class="section-eyebrow">Growth</div>
+      <div class="section-eyebrow">— Growth —</div>
       <h2 class="section-title">Learning &amp; <em>Exploring</em></h2>
       <div class="gold-rule gold-rule-center"><div class="gold-rule-diamond"></div></div>
       <p class="explore-intro">Actively <strong>attacking</strong> new technologies — <strong>building</strong> expertise on the relentless path to mastery.</p>
@@ -1376,7 +1433,7 @@
   <section id="contact" aria-label="Contact">
     <div class="contact-grid">
       <div class="reveal">
-        <div class="section-eyebrow">Contact</div>
+        <div class="section-eyebrow">— Contact —</div>
         <h2 class="section-title">Let Us <em>Connect</em></h2>
         <div class="gold-rule"><div class="gold-rule-diamond"></div></div>
         <p class="contact-body">
