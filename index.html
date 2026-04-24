@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=https://yournewdomain.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://preetishkad.netlify.app/">
     <script>
-      window.location.href = "https://yournewdomain.com" + window.location.pathname + window.location.search;
+      // preserve path + query + hash
+      const newUrl = "https://preetishkad.netlify.app" +
+                     window.location.pathname +
+                     window.location.search +
+                     window.location.hash;
+      window.location.replace(newUrl);
     </script>
+    <title>Redirecting...</title>
   </head>
   <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to new site...</p>
   </body>
 </html>
